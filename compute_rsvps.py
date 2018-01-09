@@ -5,10 +5,6 @@ from df2gspread import df2gspread as d2g
 from df2gspread import gspread2df as g2d
 import gspread
 
-# the YES/NO options on the RSVP form
-YES = "can't wait!"
-NO  = "regretfully, can't make it"
-
 def clean_jotform(jotform_id):
     """
     Read the Jotform data from a google spreadsheet and returned the cleaned
@@ -46,7 +42,7 @@ def clean_jotform(jotform_id):
 
     return data
 
-def get_rsvps(df):
+def get_rsvps(df, YES, NO):
     """
     Parse the cleaned Jotform data and determine the RSVP responses for each
     online submission.
@@ -187,8 +183,12 @@ if __name__ == '__main__':
     JOTFORM = "1_hoBn8_0U9kurUFrr3sv6HAR_TCt2GlRL547G4ZZI7w"
     df = clean_jotform(JOTFORM)
 
+    # the YES/NO options on the RSVP form
+    YES = "can't wait!"
+    NO  = "regretfully, can't make it"
+
     # get the DataFrame holding the RSVPs
-    df = get_rsvps(df)
+    df = get_rsvps(df, YES, NO)
 
     # upload the RSVP list to your own google drive
     UPLOAD = "1iEAfk1cVG_PwhcwKJxUeLycUIsRhsAsp9e4xCk2qLtM"
