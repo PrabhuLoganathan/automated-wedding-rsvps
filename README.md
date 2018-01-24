@@ -1,5 +1,7 @@
 # Automated Wedding RSVPs with JotForm, pandas, and Google docs
 
+For more details, see [this blog post](http://nickhand.github.io/blog/pages/2018/01/10/automating-wedding-rsvps/).
+
 # Requirements
 
 You'll need Python 2/3 and `df2gspread` installed. I recommend using [Anaconda](https://www.anaconda.com/download) for your Python manager. The necessary requirements can be installed using:
